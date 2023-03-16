@@ -16,7 +16,7 @@
     </a>
 </p>
 
-##插件用法
+## 插件用法
 
 将该插件放到JKook API的实现客户端(比如KookBC)的plugins文件夹里,启动机器人,将会生成配置文件，按配置文件填写好相应信息，重启机器人即可开始使用。
 
@@ -26,10 +26,8 @@ QQ号与游戏ID为可选选项,但必须按顺序提供\
 
 注意，机器人给用户上角色的时候采用`角色名`匹配,所以使用命令时角色名必须要对的上服务器里存在的角色名，否则就不会给用户上角色
 
-##以下是示例图片
+## 以下是示例图片
 
 <img src="https://img.kookapp.cn/assets/2023-03/5oTE2e81KK0al05c.png">
 <img src="https://img.kookapp.cn/assets/2023-03/gRADS2qPVv0b302s.png">
 <img src="https://img.kookapp.cn/assets/2023-03/rA53ghQJUC0g507f.png">
-
-
