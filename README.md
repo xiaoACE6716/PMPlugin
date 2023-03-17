@@ -31,5 +31,3 @@ QQ号与游戏ID为可选选项,但必须按顺序提供\
 <img src="https://img.kookapp.cn/assets/2023-03/5oTE2e81KK0al05c.png">
 <img src="https://img.kookapp.cn/assets/2023-03/gRADS2qPVv0b302s.png">
 <img src="https://img.kookapp.cn/assets/2023-03/rA53ghQJUC0g507f.png">
-
-
