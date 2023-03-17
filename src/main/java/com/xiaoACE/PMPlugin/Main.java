@@ -1,6 +1,5 @@
 package com.xiaoACE.PMPlugin;
 
-import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import com.xiaoACE.PMPlugin.listener.ButtonListener;
 import snw.jkook.JKook;
@@ -17,7 +16,7 @@ import snw.jkook.util.PageIterator;
 
 import java.util.Set;
 
-import static com.xiaoACE.PMPlugin.utils.allTheCard.buildCardOne;
+import static com.xiaoACE.PMPlugin.utils.AllTheCard.buildCardOne;
 
 /**
  * @author xiaoACE
@@ -61,10 +60,10 @@ public class Main extends BasePlugin {
                     }
 
                     //初始化 PageIterator<Set<Role>> roles
-                    PageIterator<Set<Role>> roles = null;
-                    if(guild != null){
-                        roles = guild.getRoles();
-                    }
+//                    PageIterator<Set<Role>> roles = null;
+//                    if(guild != null){
+//                        roles = guild.getRoles();
+//                    }
 
                     //初始化用户信息
                     String user_full_name = sender.getFullName(guild);

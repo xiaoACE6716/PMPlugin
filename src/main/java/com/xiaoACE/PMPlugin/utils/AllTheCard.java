@@ -17,7 +17,7 @@ import snw.jkook.message.component.card.structure.Paragraph;
 
 import java.util.Arrays;
 
-public class allTheCard {
+public class AllTheCard {
 
     //构建待审核卡片
     public static MultipleCardComponent buildCardOne(JSONObject info_json){
@@ -135,7 +135,7 @@ public class allTheCard {
                 Arrays.asList(
                         new MarkdownElement(a),
                         new MarkdownElement(b),
-                        new MarkdownElement(c))),null, Accessory.Mode.RIGHT));
+                        new MarkdownElement(c))),null, null));
         cardBuilder.addModule(new SectionModule(new Paragraph(3,
                 Arrays.asList(
                         new MarkdownElement(d),

@@ -18,7 +18,7 @@ import snw.jkook.util.PageIterator;
 
 import java.util.Set;
 
-import static com.xiaoACE.PMPlugin.utils.allTheCard.buildCardTwo;
+import static com.xiaoACE.PMPlugin.utils.AllTheCard.buildCardTwo;
 
 public class ButtonListener implements Listener {
 
@@ -27,13 +27,14 @@ public class ButtonListener implements Listener {
 
         String eventRawJson = event.getValue();
 
-        JSONObject eventJson = null;
+        JSONObject eventJson;
         try{
             eventJson = JSONUtil.parseObj(eventRawJson,false);
         }catch (JSONException e){
             e.printStackTrace();
             System.out.println("序列化JSON时出现异常,将打印异常raw");
             System.out.println(eventRawJson);
+            return;
         }
 
         String actionName = eventJson.getStr("action-name");
@@ -56,11 +57,13 @@ public class ButtonListener implements Listener {
             if(guild != null){
                 roles = guild.getRoles();
             }
-            while (roles.hasNext()){
-                Set<Role> roleSet = roles.next();
-                for (Role role:roleSet){
-                    if (role.getName().equals(want_role)){
-                        user.grantRole(role);
+            if (roles != null) {
+                while (roles.hasNext()){
+                    Set<Role> roleSet = roles.next();
+                    for (Role role:roleSet){
+                        if (role.getName().equals(want_role)){
+                            user.grantRole(role);
+                        }
                     }
                 }
             }
@@ -71,9 +74,6 @@ public class ButtonListener implements Listener {
             MultipleCardComponent multipleCardComponent = buildCardTwo(eventJson);
 
             message.setComponent(multipleCardComponent);
-
-
-
 
         }else if(actionName.equals("不通过")) {
 
@@ -100,9 +100,8 @@ public class ButtonListener implements Listener {
     private static Guild getGuild(){
 
         String Guild_ID = Main.getInstance().getConfig().getString("Guild_ID");
-        Guild guild = JKook.getHttpAPI().getGuild(Guild_ID);
 
-        return guild;
+        return JKook.getHttpAPI().getGuild(Guild_ID);
     }
 
 }
